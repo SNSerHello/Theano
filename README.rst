@@ -2,6 +2,8 @@
 ============
 $ python3 setup.py bdist_wheel --universal
 
+为了支持GPU，需要编译安装libgpuarray，请参考：https://github.com/SNSerHello/libgpuarray
+
 检查theano使用CPU还是GPU
 =======================
 from theano import function, config, shared, tensor as tt
