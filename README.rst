@@ -1,3 +1,6 @@
+制作wheel文件
+$ python3 setup.py bdist_wheel --universal
+
 ============================================================================================================
 MILA will stop developing Theano: https://groups.google.com/d/msg/theano-users/7Poq8BZutbY/rNCIfvAEAwAJ
 
