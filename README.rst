@@ -23,12 +23,15 @@ for i in range(iters):
 t1 = time.time()
 print("Looping %d times took %f seconds" % (iters, t1 - t0))
 print("Result is %s" % (r,))
-if numpy.any([isinstance(x.op, tt.elemwise.Elemwise) and
-              ('Gpu' not in type(x.op).__name__)
-              for x in f.maker.fgraph.toposort()]):
-    print('Used the cpu')
+if numpy.any(
+    [
+        isinstance(x.op, tt.elemwise.Elemwise) and ("Gpu" not in type(x.op).__name__)
+        for x in f.maker.fgraph.toposort()
+    ]
+):
+    print("Used the cpu")
 else:
-    print('Used the gpu')
+    print("Used the gpu")
 
 
 参考：https://theano-pymc.readthedocs.io/en/latest/tutorial/using_gpu.html
