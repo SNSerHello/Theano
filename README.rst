@@ -37,6 +37,7 @@ else:
 参考：https://theano-pymc.readthedocs.io/en/latest/tutorial/using_gpu.html
 
 在linux中搭建Anaconda3环境
+=========================
 
 1）访问：https://repo.anaconda.com/archive/
 2）下载：https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
