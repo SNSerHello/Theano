@@ -109,6 +109,7 @@ library_path = /media/samba/anaconda3/envs/py38-theano/lib
 include_path = /media/samba/anaconda3/envs/py38-theano/include
 
 [cuda]
+# cuda = /media/samba/anaconda3/envs/py36-theano/bin
 cuda = /media/samba/anaconda3/envs/py38-theano/bin
 
 [lib]
