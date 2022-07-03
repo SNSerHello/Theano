@@ -36,6 +36,18 @@ else:
 
 参考：https://theano-pymc.readthedocs.io/en/latest/tutorial/using_gpu.html
 
+在linux中搭建Anaconda3环境
+
+1）访问：https://repo.anaconda.com/archive/
+2）下载：https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+
+$ wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+
+因为这版本版本中使用python3.8.5，符合当前的需求，当前的最新版本为：https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+
+$ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+
+
 在Linux中搭建Theano环境
 ======================
 
