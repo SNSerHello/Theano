@@ -153,11 +153,17 @@ dependencies:
 =========================
 
 $ mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+
 $ nano $CONDA_PREFIX/etc/conda/activate.d/env_vars.h
+
 CUDA_HOME=$CONDA_PREFIX
+
 export LD_LIBRARY_PATH=$CUDA_HOME/lib:$LD_LIBRARY_PATH
+
 $ mkdir -p $CONDA_PREFIX/etc/conda/deactivate.d
+
 $ nano $CONDA_PREFIX/etc/conda/deactivate.d/env_vars.h
+
 export LD_LIBRARY_PATH=`echo $LD_LIBRARY_PATH | cut -d : -f 2-`
 
 
