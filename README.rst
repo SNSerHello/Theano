@@ -36,6 +36,107 @@ else:
 
 参考：https://theano-pymc.readthedocs.io/en/latest/tutorial/using_gpu.html
 
+在Linux中搭建Theano环境
+======================
+
+$ conda env create --file py38-theano.yaml
+
+py38-theano.yaml配置如下：
+
+name: py38-theano
+
+# The conda channels to lookup the dependencies
+channels:
+  - anaconda
+  - conda-forge
+
+# The packages to install to the environment
+dependencies:
+  - conda-build
+  - git
+  - numpy
+  - pytest
+  - cython
+  - cmake
+  - bzip2
+  - make
+  - scipy
+  - pillow
+  - cudatoolkit-dev=11.3
+  - cudnn
+  - libgpuarray
+  - ipython
+  - pip
+  - python=3.8
+  - black
+  - opencv
+  - matplotlib
+  - pandas
+  - theano
+
+.theanorc配置如下：
+
+[global]
+floatX = float32
+device = cuda
+optimizer_including = cudnn
+
+[gcc]
+# cxxflags = -I/media/samba/anaconda3/envs/py36-theano/include -L/media/samba/anaconda3/envs/py36-theano/lib -L/media/samba/anaconda3/envs/py36-theano/lib64 -L/usr/lib/x86_64-linux-gnu -lrt -pthread -lresolv
+cxxflags = -I/media/samba/anaconda3/envs/py38-theano/include -L/media/samba/anaconda3/envs/py38-theano/lib -L/usr/lib/x86_64-linux-gnu -lrt -pthread -lresolv
+
+[gpuarray]
+preallocate = 0
+
+[dnn]
+enabled = True
+# library_path = /media/samba/anaconda3/envs/py36-theano/lib
+# include_path = /media/samba/anaconda3/envs/py36-theano/include
+library_path = /media/samba/anaconda3/envs/py38-theano/lib
+include_path = /media/samba/anaconda3/envs/py38-theano/include
+
+[cuda]
+cuda = /media/samba/anaconda3/envs/py38-theano/bin
+
+[lib]
+cnmem = 0.5
+
+上面配置了python3.6与python3.8，在Ubuntu20.0LTS中，python3.6的动态编译很慢，不知道什么原因，所以建议使用python3.8。
+
+附加py36-theano.yaml配置如下：
+
+name: py36-theano
+
+# The conda channels to lookup the dependencies
+channels:
+  - anaconda
+  - conda-forge
+
+# The packages to install to the environment
+dependencies:
+  - conda-build
+  - git
+  - numpy
+  - pytest
+  - cython
+  - cmake
+  - bzip2
+  - make
+  - scipy
+  - pillow
+  - cudatoolkit-dev=9.2
+  - cudnn=7.1
+  - ipython
+  - jedi
+  - pip
+  - python=3.6
+  - black
+  - opencv
+  - matplotlib
+  - pandas
+  - theano
+
+
 
 ============================================================================================================
 MILA will stop developing Theano: https://groups.google.com/d/msg/theano-users/7Poq8BZutbY/rNCIfvAEAwAJ
